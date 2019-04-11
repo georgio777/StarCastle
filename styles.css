@@ -1,3 +1,234 @@
+.two {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none; }
+
+.game {
+  width: 100%;
+  height: 100%; }
+
+.playground {
+  width: 100%;
+  height: 100%;
+  background: url("img/shining_stars.gif") repeat;
+  background-color: black; }
+
+.ufo {
+  background: red;
+  width: 20px;
+  height: 20px; }
+
+.black-hole {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 40%;
+  top: 40%;
+  background: yellow;
+  -webkit-transition: -webkit-transform 3s ease;
+  transition: -webkit-transform 3s ease;
+  -o-transition: transform 3s ease;
+  transition: transform 3s ease;
+  transition: transform 3s ease, -webkit-transform 3s ease;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); }
+
+.earth {
+  width: 20px;
+  height: 20px;
+  background: #6464f0;
+  position: absolute;
+  top: 70%;
+  left: 20%; }
+
+.mars {
+  width: 15px;
+  height: 15px;
+  background: #861d03;
+  position: absolute;
+  top: 5%;
+  left: 60%; }
+
+.venus {
+  width: 30px;
+  height: 30px;
+  background: #f0cf64;
+  position: absolute;
+  top: 70%;
+  left: 70%; }
+
+.message {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.726);
+  display: none;
+  color: white; }
+
+.left {
+  width: auto; }
+
+.right {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 40px; }
+
+@-webkit-keyframes reach-the-sun {
+  to {
+    left: 40%;
+    top: 40%;
+    opacity: 0; } }
+
+@keyframes reach-the-sun {
+  to {
+    left: 40%;
+    top: 40%;
+    opacity: 0; } }
+
+.last-message {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 5px dashed white;
+  background: black;
+  height: 15%;
+  display: none;
+  color: white; }
+
+.curtains {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  -webkit-transition: opacity 5s linear;
+  -o-transition: opacity 5s linear;
+  transition: opacity 5s linear;
+  opacity: 0; }
+
+.galaxy {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%; }
+
+.galaxy-gif {
+  width: 100%;
+  height: 100%; }
+
+.story {
+  width: 100%;
+  height: 100%;
+  background: url("img/shining_stars.gif") repeat;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.choosename {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+#name {
+  border: 2px solid grey;
+  background: transparent;
+  color: white;
+  height: 50px;
+  outline: none;
+  padding: 0 0 0 15px; }
+
+#name:focus {
+  border: 2px solid #a5a4a4; }
+
+.button-style {
+  outline: none;
+  width: 80px;
+  min-width: 80px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid grey;
+  color: grey; }
+
+.button-style:active {
+  border: 2px solid #a5a4a4;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9); }
+
+.button-style:focus {
+  border: 2px solid white;
+  color: white; }
+
+.speech {
+  display: none;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: justify; }
+
+.speech img {
+  width: 200px; }
+
+.speech-text {
+  padding: 40px;
+  color: white; }
+
+.arrows {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: auto; }
+
+.arrows img {
+  width: 90px; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -106,6 +337,9 @@ body {
   animation-fill-mode: backwards;
   z-index: 50; }
 
+.two {
+  font-family: "VT323", monospace; }
+
 .dancing-girl {
   position: absolute;
   width: auto;
@@ -158,7 +392,7 @@ body {
   width: auto;
   position: fixed;
   top: 0px;
-  left: 50px;
+  left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,6 +432,19 @@ body {
     color: #5353f1; }
   .socials .sc {
     color: orangered; }
+  .socials .home {
+    color: #165702;
+    height: 40px;
+    width: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
 
 .boo-pop-up {
   z-index: 100;
@@ -297,7 +544,8 @@ body {
   max-width: 980px;
   padding: 0 25px;
   margin: 0 auto;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 .header-inner {
   width: 100%;
@@ -504,7 +752,9 @@ body {
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  height: 100%;
+  width: 100%; }
 
 .question-container {
   border-top: solid #d3d2d2;
@@ -537,6 +787,32 @@ body {
   background-position-y: -50px;
   -webkit-background-clip: text; }
 
+.section-one-buttons {
+  width: auto;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative; }
+
+.bang {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  opacity: 1; }
+
 .question-button {
   border-top: solid #d3d2d2;
   border-left: solid #d3d2d2;
@@ -549,7 +825,21 @@ body {
   height: 40px;
   font-size: 18px;
   margin: 10px;
-  outline: none; }
+  outline: none;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  -o-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transition-duration: 1s, 1s;
+  -o-transition-duration: 1s, 1s;
+  transition-duration: 1s, 1s;
+  -o-transition-timing-function: ease;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
   .question-button:active {
     background-color: #d8d8d8;
     -webkit-transform: scale(0.95);
@@ -561,41 +851,105 @@ audio {
   top: 0px;
   right: 50px; }
 
+.gifs {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: auto 100%; }
+
 .dance-one {
-  position: absolute;
-  left: 10%;
-  top: 30%;
+  width: 350px;
   -webkit-transition: opacity 5s ease;
   -o-transition: opacity 5s ease;
   transition: opacity 5s ease;
-  opacity: 0; }
+  -webkit-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
+  opacity: 0;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  -ms-grid-row-span: 2;
+  grid-row-end: 3;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: 2; }
 
 .dance-two {
-  position: absolute;
-  left: 40%;
-  top: 32%;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: 2;
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  -ms-grid-column-span: 1;
+  grid-column-end: 3;
+  width: 220px;
   -webkit-transition: opacity 5s ease;
   -o-transition: opacity 5s ease;
   transition: opacity 5s ease;
+  -webkit-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
   opacity: 0; }
 
 .dance-three {
-  position: absolute;
-  left: 40%;
-  top: 60%;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  -ms-grid-row-span: 2;
+  grid-row-end: 3;
+  -ms-grid-column: 3;
+  grid-column-start: 3;
+  -ms-grid-column-span: 1;
+  grid-column-end: 4;
+  width: 300px;
   -webkit-transition: opacity 5s ease;
   -o-transition: opacity 5s ease;
   transition: opacity 5s ease;
+  -webkit-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
   opacity: 0; }
 
 .dance-four {
-  position: absolute;
-  left: 68%;
-  top: 50%;
+  -ms-grid-row: 2;
+  grid-row-start: 2;
+  -ms-grid-row-span: 1;
+  grid-row-end: 3;
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  -ms-grid-column-span: 1;
+  grid-column-end: 3;
+  width: 220px;
   -webkit-transition: opacity 5s ease;
   -o-transition: opacity 5s ease;
   transition: opacity 5s ease;
+  -webkit-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
   opacity: 0; }
 
 .invisible {
   display: none; }
+
+@media (min-width: 0px) and (max-width: 1080px) {
+  .header-inner {
+    margin-top: 50px; }
+  .inner-one {
+    margin-top: 90px; } }
+
+@media (min-width: 0px) and (max-width: 800px) {
+  .logo,
+  .welcome {
+    width: 100%; }
+  .idk .help {
+    position: absolute;
+    right: -150px;
+    top: 150px; }
+    .idk .help img {
+      display: none; }
+  .gifs {
+    visibility: hidden; } }

@@ -1,3 +1,5 @@
+@import "_game";
+
 * {
   margin: 0;
   padding: 0;
@@ -133,6 +135,10 @@ body {
   z-index: 50;
 }
 
+.two {
+  font-family: $pixel;
+}
+
 .dancing-girl {
   position: absolute;
   width: auto;
@@ -172,7 +178,7 @@ body {
   width: auto;
   position: fixed;
   top: 0px;
-  left: 50px;
+  left: 0px;
   display: flex;
   z-index: 50;
   a {
@@ -203,6 +209,12 @@ body {
   }
   .sc {
     color: orangered;
+  }
+  .home {
+    color: rgb(22, 87, 2);
+    height: 40px;
+    width: 70px;
+    @include flex();
   }
 }
 
@@ -264,6 +276,7 @@ body {
   padding: 0 25px;
   margin: 0 auto;
   width: 100%;
+  height: 100%;
 }
 
 header {
@@ -397,7 +410,8 @@ header {
 
 .inner-one {
   @include flex-column();
-
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -420,6 +434,23 @@ header {
   -webkit-background-clip: text;
 }
 
+.section-one-buttons {
+  width: auto;
+  height: 100px;
+  @include flex;
+  position: relative;
+}
+
+.bang {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 1s ease;
+  opacity: 1;
+}
+
+
 .question-button {
   @include grey-block();
   width: 100px;
@@ -427,6 +458,12 @@ header {
   font-size: 18px;
   margin: 10px;
   outline: none;
+  cursor: pointer;
+  transition-property: transform, opacity;
+  transition-duration: 1s, 1s;
+  -o-transition-timing-function: ease;
+  transform: scale(1);
+  opacity: 1;
   &:active {
     background-color: lighten($block-background, 10%);
     transform: scale(0.95);
@@ -439,37 +476,85 @@ audio {
   right: 50px;
 }
 
+.gifs {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: auto 100%;
+}
 .dance- {
   &one {
-    position: absolute;
-    left: 10%;
-    top: 30%;
+    width: 350px;
     transition: opacity 5s ease;
+    transition-delay: 2s;
     opacity: 0;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
   &two {
-    position: absolute;
-    left: 40%;
-    top: 32%;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 220px;
     transition: opacity 5s ease;
+    transition-delay: 2s;
     opacity: 0;
   }
   &three {
-    position: absolute;
-    left: 40%;
-    top: 60%;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    width: 300px;
     transition: opacity 5s ease;
+    transition-delay: 2s;
     opacity: 0;
   }
   &four {
-    position: absolute;
-    left: 68%;
-    top: 50%;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 220px;
     transition: opacity 5s ease;
+    transition-delay: 2s;
     opacity: 0;
   }
 }
 
 .invisible {
   display: none;
+}
+
+@media (min-width: 0px) and (max-width:1080px) {
+  .header-inner {
+    margin-top: 50px;
+  }
+  .inner-one {
+    margin-top: 90px;
+  }
+}
+
+@media (min-width: 0px) and (max-width:800px) {
+  .logo,
+  .welcome {
+    width: 100%;
+  }
+  .idk {
+    .help {
+      position: absolute;
+      right: -150px;
+      top: 150px;
+      img {
+        display: none;
+      }
+    }
+  }
+  .gifs {
+    visibility: hidden;
+  }
 }

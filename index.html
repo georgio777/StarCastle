@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>BountyTweex - Your favorite music band</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles.css" type="text/css" rel="stylesheet" />
@@ -29,6 +30,7 @@
       <a href="https://www.facebook.com/BountyTweex"><span class="fb">Facebook</span></a>
       <a href="https://vk.com/bountytweex"><span class="vk">VK</span></a>
       <a href="https://soundcloud.com/bountytweex"><span class="sc">Soundcloud</span></a>
+      <a href="#"><span class="home">Main</span></a>
     </div>
     <header class="header">
       <div class="container">
@@ -43,6 +45,7 @@
               <button class="destiny-button no">no..</button>
               <button class="destiny-button idk">IDK what's goin' on! <span class="help"> <span>Actually nobody does. Just press "YES!" don't be a chicken</span><img src="img/chicken.gif" alt=""></span></button>
             </div>
+            <div class="pc"><img src="img/pc.gif" alt="" style="height: 100px;"></div>
         </div>
       </div>
     </header>
@@ -55,14 +58,54 @@
                 What about music?
               </span>
             </div>
-            <button class="question-button yes-two">Cmon</button>
-            <button class="question-button no-two">Dont want</button>
-            <img src="img/dance1.gif" alt="" class="dance-one">
-            <img src="img/dance2.gif" alt="" class="dance-two">
-            <img src="img/dance 3.gif" alt="" class="dance-three">
-            <img src="img/dance4.gif" alt="" class="dance-four">
+            <div class="section-one-buttons">
+              <button class="question-button yes-two">Cmon</button>
+              <button class="question-button no-two">Dont want</button>
+            </div>           
+            <div class="gifs">
+              <img src="img/dance1.gif" alt="" class="dance-one">
+              <img src="img/dance2.gif" alt="" class="dance-two">
+              <img src="img/dance 3.gif" alt="" class="dance-three">
+              <img src="img/dance4.gif" alt="" class="dance-four">
+            </div>      
           </div>
         </div>
+      </section>
+
+      <section class="two">
+          <div class="game">
+              <div class="story">
+                  <div class="chooseName">
+                    <input type="text" name="name" id="name" required placeholder="Enter your name..">
+                    <button type="submit" class="submit-name button-style">Next</button>
+                  </div>
+                  <div class="speech">
+                    <img src="img/skeleton.gif" alt="">
+                    <p class="speech-text"></p>
+                    <button class="button-next-step button-style">Next</button>
+                  </div>
+                </div>
+                <div class="playground">
+                  <div class="arrows"><img src="img/arrows.png" alt=""></div>
+                  <div class="ufo">        
+                  </div>    
+                  <div class="black-hole"></div>
+                  <div class="galaxy"><img src="img/galaxy.gif" alt="" class="galaxy-gif"></div>
+                  <div class="earth"></div>
+                  <div class="mars"></div>
+                  <div class="venus"></div>
+                  <div class="message">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                  </div>
+                  <div class="last-message">
+                    <img src="img/princess2.gif" alt="" style="height:50px;">
+                    <p>So.. I took this nice cassete from my prison, make it louder and let's discover a better place. It's wasted here..</p>
+                    <div style="width:100px;"><button class="skip-two button-style">Leave this star's system</button></div>
+                  </div>
+                  <div class="curtains"></div>
+                </div>      
+          </div>      
       </section>
     </main>
     <footer>
@@ -71,5 +114,6 @@
     <script src="scripts/help.js"></script>
     <script src="scripts/remover.js"></script>
     <script src="scripts/audio.js"></script>
+    <script src="scripts/game.js"></script>
   </body>
 </html>

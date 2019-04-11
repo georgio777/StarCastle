@@ -30,3 +30,7 @@ booPopUp.addEventListener('click', function (evt) {
   }
 });
 
+var homeButton = document.querySelector('.home');
+homeButton.addEventListener('click', function (){
+  window.location.reload(false); 
+});

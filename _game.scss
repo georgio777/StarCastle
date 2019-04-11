@@ -1,0 +1,211 @@
+.two {
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.game {
+  width: 100%;
+  height: 100%;
+}
+
+.playground {
+  width: 100%;
+  height: 100%;
+  background: url("img/shining_stars.gif") repeat;
+  background-color: black;
+}
+
+.ufo {
+  background: red;
+  width: 20px;
+  height: 20px;
+}
+
+.black-hole {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 40%;
+  top: 40%;
+  background: yellow;
+  transition: transform 3s ease;
+  transform: scale(1);
+}
+
+.earth {
+  width: 20px;
+  height: 20px;
+  background: rgb(100, 100, 240);
+  position: absolute;
+  top: 70%;
+  left: 20%;
+}
+
+.mars {
+  width: 15px;
+  height: 15px;
+  background: rgb(134, 29, 3);
+  position: absolute;
+  top: 5%;
+  left: 60%;
+}
+
+.venus {
+  width: 30px;
+  height: 30px;
+  background: rgb(240, 207, 100);
+  position: absolute;
+  top: 70%;
+  left: 70%;
+}
+
+.message {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.726);
+  display: none;
+  color: white;
+}
+
+.left {
+  width: auto;
+}
+
+.right {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+@keyframes reach-the-sun {
+  to {
+    left: 40%;
+    top: 40%;  
+    opacity: 0;
+  }
+}
+
+.last-message {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 5px dashed white;
+  background: black;
+  height: 15%;
+  display:none;
+  color: white;
+}
+
+.curtains {
+  display:none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: opacity 5s linear;
+  opacity: 0;
+}
+
+.galaxy {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+.galaxy-gif {
+  width: 100%;
+  height: 100%;
+}
+
+.story {
+  width: 100%;
+  height: 100%;
+  background: url("img/shining_stars.gif") repeat;
+  background-color: black;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.choosename {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#name {
+  border: 2px solid grey;
+  background: transparent;
+  color: white;
+  height: 50px;
+  outline: none;
+  padding: 0 0 0 15px;
+}
+
+#name:focus {
+  border: 2px solid rgb(165, 164, 164);
+}
+
+.button-style {
+  outline: none;
+  width: 80px;
+  min-width: 80px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid grey;
+  color: grey;
+}
+.button-style:active {
+  border: 2px solid rgb(165, 164, 164);
+  transform: scale(0.9);
+}
+.button-style:focus {
+  border: 2px solid rgb(255, 255, 255);
+  color: white;
+}
+
+.speech {
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+.speech img {
+  width: 200px;
+}
+
+.speech-text {
+  padding: 40px;
+color: white;
+}
+
+.arrows {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: auto;
+}
+.arrows img {
+  width: 90px;
+}
