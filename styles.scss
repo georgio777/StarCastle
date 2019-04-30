@@ -139,6 +139,30 @@ body {
   font-family: $pixel;
 }
 
+.shoot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  @include grey-block();
+  @include flex();
+  color:black;
+}
+
+.listen-on-soundcloud {
+  position: absolute;
+  bottom: 0%;
+  left:50%;
+  transform: translateX(-50%); 
+  @include grey-block();
+  color: blue;
+  text-decoration: none;
+  z-index: 150; 
+  font-family: $pixel;
+  font-size: 40px;
+}
+
 .dancing-girl {
   position: absolute;
   width: auto;
@@ -477,53 +501,48 @@ audio {
 }
 
 .gifs {
+  @include flex();
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-auto-rows: auto 100%;
+
 }
 .dance- {
-  &one {
-    width: 350px;
-    transition: opacity 5s ease;
-    transition-delay: 2s;
-    opacity: 0;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
-  &two {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    width: 220px;
-    transition: opacity 5s ease;
-    transition-delay: 2s;
-    opacity: 0;
-  }
+  // &one {
+  //   width: 350px;
+  //   transition: opacity 5s ease;
+  //   transition-delay: 2s;
+  //   opacity: 0;
+  //   grid-row-start: 1;
+  //   grid-row-end: 3;
+  //   grid-column-start: 1;
+  //   grid-column-end: 2;
+  // }
+  // &two {
+  //   grid-row-start: 1;
+  //   grid-row-end: 2;
+  //   grid-column-start: 2;
+  //   grid-column-end: 3;
+  //   width: 220px;
+  //   transition: opacity 5s ease;
+  //   transition-delay: 2s;
+  //   opacity: 0;
+  // }
   &three {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 3;
-    grid-column-end: 4;
     width: 300px;
     transition: opacity 5s ease;
     transition-delay: 2s;
     opacity: 0;
   }
-  &four {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    width: 220px;
-    transition: opacity 5s ease;
-    transition-delay: 2s;
-    opacity: 0;
-  }
+  // &four {
+  //   grid-row-start: 2;
+  //   grid-row-end: 3;
+  //   grid-column-start: 2;
+  //   grid-column-end: 3;
+  //   width: 220px;
+  //   transition: opacity 5s ease;
+  //   transition-delay: 2s;
+  //   opacity: 0;
+  // }
 }
 
 .invisible {

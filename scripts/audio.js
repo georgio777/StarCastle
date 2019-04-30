@@ -34,8 +34,9 @@ yesTwoBtn.addEventListener('click', function () {
     var audio = document.createElement('audio');
     audio.setAttribute("controls", "");
     audio.setAttribute("autoplay", "");
+    audio.setAttribute("loop", "");
     var source = document.createElement('source');
-    source.src = 'music/ignition.mp3'
+    source.src = 'music/game.mp3'
     audio.appendChild(source);
     main.appendChild(audio);
     audio.style = 'visibility:hidden;';
@@ -65,6 +66,7 @@ yesTwoBtn.addEventListener('click', function () {
   function funcThree () {
     var toNextSectionButton = document.createElement('button');
     toNextSectionButton.classList.add('question-button');
+    toNextSectionButton.classList.add('click');
     toNextSectionButton.textContent = 'NEXT';
     buttonsContainer.appendChild(toNextSectionButton);
 
