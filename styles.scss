@@ -169,6 +169,9 @@ body {
   height: auto;
   animation: move-girl 25s steps(1) infinite;
   z-index: 100;
+  img {
+    width: 90px;
+  }
 }
 
 @keyframes move-girl {
@@ -359,7 +362,19 @@ header {
   }
 }
 
+.small-width-message {
+  display: none;
+  @include grey-block();
+  color: black;
+  @media screen and (max-width: 700px) {
+    display:block; 
+  }
+}
+
 .destiny {
+  @media screen and (max-width: 700px) {
+    display:none; 
+  }
   @include flex-column();
   width: 40%;
   margin: 10px 0;
