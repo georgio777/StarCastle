@@ -10,6 +10,13 @@ var nameSection = document.querySelector('.chooseName');
 
 function startTheGame() {
   var ufo = document.querySelector('.ufo'); 
+  var ufoBundles = ufo.getBoundingClientRect();
+
+  // function to update ufo bundles
+
+  function getUfoBundles() {
+    ufoBundles = ufo.getBoundingClientRect();
+  }
 
   var borders = playGround.getBoundingClientRect();
 
@@ -119,12 +126,7 @@ function startTheGame() {
               blackHole.remove();
               document.querySelector('.galaxy').style = 'display:block';
               window.socials.style='display:flex;';
-              var listenOnSoundcloud = document.createElement('a');
-              listenOnSoundcloud.href = 'https://soundcloud.com/bountytweex/satellite';
-              listenOnSoundcloud.textContent = 'Listen on Souncloud';
-              listenOnSoundcloud.classList.add('listen-on-soundcloud');
-              listenOnSoundcloud.classList.add('click');
-              playGround.appendChild(listenOnSoundcloud);
+              
               function createAudioPlayer(){
                 var audioPlayer = document.querySelector('audio');
                 if (audioPlayer == null) {
@@ -134,6 +136,7 @@ function startTheGame() {
                 var audioTwo = document.createElement('audio');
                 audioTwo.setAttribute("controls", "");
                 audioTwo.setAttribute("autoplay", "");
+                audioTwo.classList.add('custom-style');
                 var sourceTwo = document.createElement('source');
                 sourceTwo.src = 'music/8bit.mp3'
                 audioTwo.appendChild(sourceTwo);
@@ -215,14 +218,30 @@ function startTheGame() {
   function moveEnemy() {
     if (enemy.getBoundingClientRect().bottom < playGround.getBoundingClientRect().bottom) {
     enemy.style.top = enemy.getBoundingClientRect().bottom + 1 + 'px';
+    window.currentEnemyCoords = enemy.getBoundingClientRect();
     } else {
       enemy.style.top =  - 90 + 'px';
     }
   };
   setInterval(moveEnemy, 1500);
-  function enemyCoords(){
-    window.currentEnemyCoords = enemy.getBoundingClientRect();
-  }
+
+
+  // var defeat = false;
+
+  function killHero(coords, blasterInn){
+      if(ufoBundles.right > coords.left && ufoBundles.top < coords.bottom && ufoBundles.bottom > coords. top && ufoBundles.left < coords.left - 10) {
+        ufo.style.left = '0px';
+        ufo.style.top = '0px';
+        getUfoBundles();
+        blasterInn.remove();
+        items.boxKey = false;
+        items.box = false;
+        items.princess = false;
+        items.message = false; 
+        var audio = new Audio('music/boom.mp3');
+        audio.play();   
+      }  
+  };
 
   function shootHero() {
     var audio = new Audio('music/pew.mp3');
@@ -235,43 +254,48 @@ function startTheGame() {
     playGround.appendChild(enemyBlaster);
     function moveBlaster() {
       enemyBlaster.style.left = enemyBlaster.getBoundingClientRect().left -21 + 'px';
+      var enemyBlasterCurrentCoords = enemyBlaster.getBoundingClientRect();
+      killHero(enemyBlasterCurrentCoords, enemyBlaster);
     };
-    setInterval(moveBlaster, 100);
-    setTimeout(function(){enemyBlaster.remove();}, 5000);
-    var enemyBlasterIntervalCoords = setInterval(function(){window.enemyBlasterCoords = enemyBlaster.getBoundingClientRect();
-    },50);
-    setTimeout(function(){clearInterval(enemyBlasterIntervalCoords)}, 5000);
+      setInterval(moveBlaster, 100);
+      setTimeout(function(){
+      enemyBlaster.remove();
+    }, 5000);
   };
-  var shootHeroInterval = setInterval(shootHero, 2500);
 
-  setInterval(enemyCoords, 500);
+  var shootHeroInterval = setInterval(shootHero, 2500);
 
   // MOVE ENEMY END
 
   var enableShooter = false;
 
+
+
   // listen to keydowns to call move functions
   document.addEventListener('keydown', function(evt){
-    var ufoBundles = ufo.getBoundingClientRect();
 
 
     if (evt.keyCode == 38) {
       if (ufoBundles.top > 0) {
       moveUp();
+      getUfoBundles();
       }
     } else if (evt.keyCode == 40) {
       if (ufoBundles.bottom < borders.bottom) {
       moveDown();
+      getUfoBundles();
       }
     }
 
     if (evt.keyCode == 37) {
       if (ufoBundles.left > 0) {
       moveLeft();
+      getUfoBundles();
       }
     } else if (evt.keyCode == 39) {
       if (ufoBundles.right < (borders.right-5)) {
       moveRight();
+      getUfoBundles();
       }
     }
     reachPlanetHandler(ufoBundles, blackHole, earth, mars, venus);
@@ -291,8 +315,13 @@ function startTheGame() {
         function moveBlaster() {
           blaster.style.left = blaster.getBoundingClientRect().right + 1 + 'px';
         };
-        setInterval(moveBlaster, 100);
-        setTimeout(function(){blaster.remove();}, 5000);
+        var moveBlasterInterval = setInterval(function(){
+          moveBlaster();
+          window.blastCoords = blaster.getBoundingClientRect();
+        }, 100);
+        setTimeout(function(){blaster.remove();          
+        clearInterval(moveBlasterInterval);
+        }, 5000);
       }
       if(direction=='down') {
         var blaster = document.createElement('img');
@@ -304,8 +333,14 @@ function startTheGame() {
         function moveBlaster() {
           blaster.style.top = blaster.getBoundingClientRect().bottom + 1 + 'px';
         };
-        setInterval(moveBlaster, 100);
-        setTimeout(function(){blaster.remove();}, 5000);
+        var moveBlasterInterval = setInterval(function(){
+          moveBlaster();
+          window.blastCoords = blaster.getBoundingClientRect();
+        }, 100);
+        setTimeout(function(){
+          blaster.remove();
+          clearInterval(moveBlasterInterval);
+        }, 5000);
       }
       if(direction=='left') {
         var blaster = document.createElement('img');
@@ -317,8 +352,13 @@ function startTheGame() {
         function moveBlaster() {
           blaster.style.left = blaster.getBoundingClientRect().left -21 + 'px';
         };
-        setInterval(moveBlaster, 100);
-        setTimeout(function(){blaster.remove();}, 5000);
+        var moveBlasterInterval = setInterval(function(){
+          moveBlaster();
+          window.blastCoords = blaster.getBoundingClientRect();
+        }, 100);
+        setTimeout(function(){blaster.remove();
+        clearInterval(moveBlasterInterval);
+        }, 5000);
       }
       if(direction=='up') {
         var blaster = document.createElement('img');
@@ -330,16 +370,14 @@ function startTheGame() {
         function moveBlaster() {
           blaster.style.top = blaster.getBoundingClientRect().top - 21 + 'px';
         };
-        setInterval(moveBlaster, 100);
-        setTimeout(function(){blaster.remove();}, 5000);
+        var moveBlasterInterval = setInterval(function(){
+          moveBlaster();
+          window.blastCoords = blaster.getBoundingClientRect();
+        }, 100);
+        setTimeout(function(){blaster.remove();
+        clearInterval(moveBlasterInterval);
+        }, 5000);
       }
-      var getBlastCoords = setInterval(function(){
-        window.blastCoords = blaster.getBoundingClientRect();
-      }, 100);
-      function removeGetBlastCoords() {
-        clearInterval(getBlastCoords);
-      };
-      setTimeout(removeGetBlastCoords, 5000);
     }
     // Blast closed
   });
@@ -357,23 +395,8 @@ function startTheGame() {
     };
     var callKillEnemy = setInterval(killEnemy, 100);
 
-    setInterval(function(){
-      window.heroCoords = ufo.getBoundingClientRect();
-    }, 50);
 
-    function killHero(){
-      if(window.heroCoords.right > window.enemyBlasterCoords.left && window.enemyBlasterCoords.bottom > window.heroCoords.top && window.enemyBlasterCoords.top < window.heroCoords.bottom) {
-        ufo.style.left = '0px';
-        ufo.style.top = '0px';
-        items.boxKey = false;
-        items.box = false;
-        items.princess = false;
-        items.message = false; 
-        var audio = new Audio('music/boom.mp3');
-        audio.play();   
-      }    
-    };
-    setTimeout(function(){setInterval(killHero, 100);}, 2500);
+
 };
 
 
